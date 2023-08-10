@@ -63,7 +63,7 @@ envs = [
     },
     {
       name  = "NFS_DATA_DIR",
-      value = "/watiapp_files/clients/${var.client_id}"
+      value = "/watiapp_files/clients/999999999"
     },
     {
       name  = "NFS_CONFIG_DIR",
