@@ -11,14 +11,14 @@ resource "google_cloud_run_v2_service" "cloudrun" {
       image = "asia.gcr.io/wati-gke/whatsapp_inbox_server_mt:mt-dev"
       dynamic "env" {
         for_each = var.envs
-        contents {
+        content {
           name = env.value.name
           value = env.value.value
         }
       }
       dynamic "env" {
         for_each = var.envs_secret
-        contents {
+        content {
           name = env.value.name
           value_from = env.value.value_from
         }
