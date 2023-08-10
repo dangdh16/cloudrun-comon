@@ -17,13 +17,19 @@ resource "google_cloud_run_v2_service" "cloudrun" {
         }
       }
       dynamic "env" {
-        for_each = var.envs_secret
+        for_each = var.cloud_run_container_envs_secrets
         content {
           name = env.value.name
-          value_from = {
-            secret_key_ref = {
-              key = env.value.value_from.secret_key_ref.key
-              name = env.value.value_from.secret_key_ref.name
+          dynamic "value_from" {
+            for_each = [1]
+            content {
+              dynamic "secret_key_ref" {
+                for_each = [1]
+                content {
+                  name = env.value.value_from.secret_key_ref.name
+                  key  = env.value.value_from.secret_key_ref.key
+                }
+              }
             }
           }
         }

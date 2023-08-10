@@ -114,8 +114,8 @@ envs = [
       value = "+8"
     },
 ]
-envs_secret = [
-    {
+envs_secret = {
+    SECRET_1 = {
         name = "AppSettings__PricingApiKey",
         value_from = {
             secret_key_ref = {
@@ -124,7 +124,7 @@ envs_secret = [
             }
         }
     },
-    {
+    SECRET_2 = {
         name = "AppSettings__ClareSecretKey",
         value_from = {
             secret_key_ref = {
@@ -133,7 +133,7 @@ envs_secret = [
             }
         }
     },
-    {
+    SECRET_3 = {
         name = "AppSettings__Mailgun-Key",
         value_from = {
             secret_key_ref = {
@@ -142,4 +142,4 @@ envs_secret = [
             }
         }
     }
-]
+}
