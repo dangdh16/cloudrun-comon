@@ -15,129 +15,129 @@ cpu_allocated = true
 envs = [
     {
         name = "AppSettings__DbName",
-        value = "mt-dev-Tenants",
-    },
-    {
-        name = "AppSettings__PaymentApiHost"
-        value = "https://mt-dev-client-wati-billing-service.clare.ai"
-    },
-    {
-        name = "AppSettings__TrialServer"
-        value = "false"
-    },
-    {
-        name = "AppSettings__Hangfire"
         value = "mt-dev-Tenants"
     },
     {
-      name  = "AppSettings__TwilioSmsWebhookUrl"
+        name = "AppSettings__PaymentApiHost",
+        value = "https://mt-dev-client-wati-billing-service.clare.ai"
+    },
+    {
+        name = "AppSettings__TrialServer",
+        value = "false"
+    },
+    {
+        name = "AppSettings__Hangfire",
+        value = "mt-dev-Tenants"
+    },
+    {
+      name  = "AppSettings__TwilioSmsWebhookUrl",
       value = "https://mt-dev-wati-be-7hnz7cqujq-as.a.run.app/api/v1/sms"
     },
     {
-      name  = "AppSettings__FrontEndUrl"
+      name  = "AppSettings__FrontEndUrl",
       value = "https://mt-dev-wati-shared-chat-7hnz7cqujq-as.a.run.app"
     },
     {
-      name  = "AppSettings__LoginUrl"
+      name  = "AppSettings__LoginUrl",
       value = "https://mt-dev-wati-shared-chat-7hnz7cqujq-as.a.run.app/login"
     },
     {
-      name  = "AppSettings__rsPasswordUrl"
+      name  = "AppSettings__rsPasswordUrl",
       value = "https://mt-dev-wati-shared-chat-7hnz7cqujq-as.a.run.app/resetpassword"
     },
     {
-      name  = "MNT_DIR"
+      name  = "MNT_DIR",
       value = "/app/wwwroot/data"
     },
     {
-      name  = "DATA_DIR"
+      name  = "DATA_DIR",
       value = "/app/wwwroot/data"
     },
     {
-      name  = "CONFIG_DIR"
+      name  = "CONFIG_DIR",
       value = "/app/config"
     },
     {
-      name  = "FILESTORE_IP_ADDRESS"
+      name  = "FILESTORE_IP_ADDRESS",
       value = "10.212.244.2"
     },
     {
-      name  = "NFS_DATA_DIR"
+      name  = "NFS_DATA_DIR",
       value = "/watiapp_files/clients/${var.client_id}"
     },
     {
-      name  = "NFS_CONFIG_DIR"
+      name  = "NFS_CONFIG_DIR",
       value = "/watiapp_files/config"
     },
     {
-      name  = "AppSettings__SecureRequestKey"
+      name  = "AppSettings__SecureRequestKey",
       value = "KiMQNk77vbcDiX"
     },
     {
-      name  = "MultiTenantDatabase__EnableHybrid"
+      name  = "MultiTenantDatabase__EnableHybrid",
       value = "false"
     },
     {
-      name  = "MultiTenantDatabase__DbName"
+      name  = "MultiTenantDatabase__DbName",
       value = "mt-dev-Tenants"
     },
     {
-      name  = "AppSettings__IsMultiTenantDatabase"
+      name  = "AppSettings__IsMultiTenantDatabase",
       value = "true"
     },
     {
-      name  = "AppSettings__IsPricingPlanFeatureEnabled"
+      name  = "AppSettings__IsPricingPlanFeatureEnabled",
       value = "true"
     },
     {
-        name = "AppSettings__PricingApiHost"
+        name = "AppSettings__PricingApiHost",
         value = "https://dev-pricing-service-release-330-7hnz7cqujq-as.a.run.app"
     },
     {
-      name  = "AppSettings__UseCustomMarkupFee"
+      name  = "AppSettings__UseCustomMarkupFee",
       value = "true"
     },
     {
-      name  = "AppSettings__IsMultiTenantBackend"
+      name  = "AppSettings__IsMultiTenantBackend",
       value = "true"
     },
     {
-      name  = "TenantIdResolverType"
+      name  = "TenantIdResolverType",
       value = "path"
     },
     {
-      name  = "AppSettings__EmailErrorAlert"
+      name  = "AppSettings__EmailErrorAlert",
       value = "qa_errors_alert_dev_g-aaaagytyjl7gdiisyvzmntywty@clare-ai.slack.com"
     },
     {
-      name  = "AppSettings__CustomerTimeZone"
+      name  = "AppSettings__CustomerTimeZone",
       value = "+8"
     },
 ]
 envs_secret = [
     {
-        name = "AppSettings__PricingApiKey"
+        name = "AppSettings__PricingApiKey",
         value_from = {
             secret_key_ref = {
-                key  = "latest"
+                key  = "latest",
                 name = "dev_PRICING_API_KEY"
             }
         }
     },
     {
-        name = "AppSettings__ClareSecretKey"
+        name = "AppSettings__ClareSecretKey",
         value_from = {
             secret_key_ref = {
-                key  = "latest"
+                key  = "latest",
                 name = "dev_CLARE_SECRET_KEY"
             }
         }
     },
     {
-        name = "AppSettings__Mailgun-Key"
+        name = "AppSettings__Mailgun-Key",
         value_from = {
             secret_key_ref = {
-                key  = "latest"
+                key  = "latest",
                 name = "dev_MAILGUN_API_KEY"
             }
         }
