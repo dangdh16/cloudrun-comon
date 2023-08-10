@@ -5,8 +5,6 @@ resource "google_cloud_run_v2_service" "cloudrun" {
   location = var.region
 
   template {
-    # container_concurrency = var.concurrency
-    # timeout_seconds = var.timeout
     containers {
       image = "asia.gcr.io/wati-gke/whatsapp_inbox_server_mt:mt-dev"
       dynamic "env" {
@@ -39,10 +37,6 @@ resource "google_cloud_run_v2_service" "cloudrun" {
       }
       resources {
         cpu_idle = var.cpu_allocated ? false : true
-        #requests = {
-        #  cpu = var.cpus
-        #  memory = var.memory
-        #}
       }
     }
     vpc_access{
