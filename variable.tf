@@ -113,16 +113,17 @@ variable cpu_allocated {
 }
 
 variable envs {
-  type = list(object{
+  description = "Environment of applications"
+  type = list(object({
     name  = string
     value = string
-  })
+  }))
   default = []
-  description = "Environment of applications"
 }
 
 variable envs_secret {
-  type = list(object{
+  description = "Environment get from secret of applications"
+  type = list(object({
     name = string
     value_from = {
         secret_key_ref = {
@@ -130,7 +131,6 @@ variable envs_secret {
             name = string
         }
     }
-  })
+  }))
   default = []
-  description = "Environment get from secret of applications"
 }
