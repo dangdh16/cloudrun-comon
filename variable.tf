@@ -125,10 +125,10 @@ variable envs_secret {
   description = "Environment get from secret of applications"
   type = map(object({
     name = string
-    value_from = object({
+    value_source = object({
       secret_key_ref = object({
-        name = string
-        key  = string
+        secret = string
+        version  = string
       })
     })
   }))
