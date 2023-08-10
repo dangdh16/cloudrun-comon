@@ -114,7 +114,7 @@ variable cpu_allocated {
 
 variable envs {
   type = list(object{
-    name  = string,
+    name  = string
     value = string
   })
   default = []
@@ -123,10 +123,10 @@ variable envs {
 
 variable envs_secret {
   type = list(object{
-    name = string,
+    name = string
     value_from = {
         secret_key_ref = {
-            key  = string,
+            key  = string
             name = string
         }
     }
