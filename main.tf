@@ -20,7 +20,12 @@ resource "google_cloud_run_v2_service" "cloudrun" {
         for_each = var.envs_secret
         content {
           name = env.value.name
-          value_from = env.value.value_from
+          value_from = {
+            secret_key_ref = {
+              key = env.value.value_from.secret_key_ref.key
+              name = env.value.value_from.secret_key_ref.name
+            }
+          }
         }
       }
       ports {
