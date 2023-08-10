@@ -132,5 +132,5 @@ variable envs_secret {
       })
     })
   }))
-  default = []
+  default = {}
 }
