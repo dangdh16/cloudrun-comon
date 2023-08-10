@@ -111,3 +111,15 @@ variable cpu_allocated {
   default = true
   description = "true is enable cpu allocated"
 }
+
+variable envs {
+  type = list(object)
+  default = []
+  description = "Environment of applications"
+}
+
+variable envs_secret {
+  type = list(object)
+  default = []
+  description = "Environment get from secret of applications"
+}
