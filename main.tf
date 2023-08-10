@@ -17,7 +17,7 @@ resource "google_cloud_run_v2_service" "cloudrun" {
         }
       }
       dynamic "env" {
-        for_each = var.cloud_run_container_envs_secrets
+        for_each = var.envs_secret
         content {
           name = env.value.name
           dynamic "value_from" {
