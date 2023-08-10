@@ -28,10 +28,10 @@ resource "google_cloud_run_v2_service" "cloudrun" {
       }
       resources {
         cpu_idle = var.cpu_allocated ? false : true
-        requests = {
-          cpu = var.cpus
-          memory = var.memory
-        }
+        #requests = {
+        #  cpu = var.cpus
+        #  memory = var.memory
+        #}
       }
     }
     vpc_access{
