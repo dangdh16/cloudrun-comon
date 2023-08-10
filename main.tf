@@ -20,14 +20,14 @@ resource "google_cloud_run_v2_service" "cloudrun" {
         for_each = var.envs_secret
         content {
           name = env.value.name
-          dynamic "value_from" {
+          dynamic "value_source" {
             for_each = [1]
             content {
               dynamic "secret_key_ref" {
                 for_each = [1]
                 content {
-                  name = env.value.value_from.secret_key_ref.name
-                  key  = env.value.value_from.secret_key_ref.key
+                  secret = env.value.value_from.secret_key_ref.secret
+                  version = env.value.value_from.secret_key_ref.version
                 }
               }
             }

@@ -117,28 +117,28 @@ envs = [
 envs_secret = {
     SECRET_1 = {
         name = "AppSettings__PricingApiKey",
-        value_from = {
+        value_source = {
             secret_key_ref = {
-                key  = "latest",
-                name = "dev_PRICING_API_KEY"
+                version  = "1",
+                secret = "dev_PRICING_API_KEY"
             }
         }
     },
     SECRET_2 = {
         name = "AppSettings__ClareSecretKey",
-        value_from = {
+        value_source = {
             secret_key_ref = {
-                key  = "latest",
-                name = "dev_CLARE_SECRET_KEY"
+                version  = "1",
+                secret = "dev_CLARE_SECRET_KEY"
             }
         }
     },
     SECRET_3 = {
         name = "AppSettings__Mailgun-Key",
-        value_from = {
+        value_source = {
             secret_key_ref = {
-                key  = "latest",
-                name = "dev_MAILGUN_API_KEY"
+                version  = "1",
+                secret = "dev_MAILGUN_API_KEY"
             }
         }
     }
