@@ -26,8 +26,8 @@ resource "google_cloud_run_v2_service" "cloudrun" {
               dynamic "secret_key_ref" {
                 for_each = [1]
                 content {
-                  secret = env.value.value_from.secret_key_ref.secret
-                  version = env.value.value_from.secret_key_ref.version
+                  secret = env.value.value_source.secret_key_ref.secret
+                  version = env.value.value_source.secret_key_ref.version
                 }
               }
             }
